@@ -1,0 +1,24 @@
+* {
+  font-family: sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+.list {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cart {
+  background-color: forestgreen;
+  padding: 1em;
+}
+
+.fruit {
+  font-size: 3em;
+  text-align: center;
+}
