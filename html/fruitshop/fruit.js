@@ -1,19 +1,30 @@
 const fruits = ["🍒", "🍍", "🍓", "🍎", "🍋", "🍇", "🍉", "🥝"];
-const fruitListElement = document.getElementById("fruitList");
-const shoppingCartElement = document.getElementById("shoppingCart");
-const amountElement = document.getElementById("amount");
+let fruitListElement;
+let shoppingCartElement;
+let amountElement;
 
 let shoppingList = [];
 
-for (let fruit of fruits) {
-  const fruitElement = document.createElement("div");
-  fruitElement.innerText = fruit;
-  fruitElement.classList.add("fruit");
-  fruitElement.onclick = addToShoppingList;
-  fruitListElement.appendChild(fruitElement);
+function onLoadHandler() {
+  fruitListElement = document.getElementById("fruitList");
+  shoppingCartElement = document.getElementById("shoppingCart");
+  amountElement = document.getElementById("amount");
+
+  for (let fruit of fruits) {
+    const fruitElement = document.createElement("div");
+    fruitElement.innerText = fruit;
+    fruitElement.classList.add("fruit");
+    fruitElement.addEventListener("click", addToShoppingList);
+    fruitElement.addEventListener("click", () => {
+      console.log("This is in the arrow function");
+      console.log(this);
+    });
+    fruitListElement.appendChild(fruitElement);
+  }
 }
 
 function addToShoppingList() {
+  console.log(this);
   shoppingList.push(this.innerText);
 
   const cartElement = document.createElement("div");
@@ -24,7 +35,11 @@ function addToShoppingList() {
 
   const button = document.createElement("button");
   button.innerText = "Remove";
-  button.onclick = removeElement;
+  button.addEventListener("click", removeElement);
+  button.addEventListener("click", () => {
+    console.log("This is in the arrow function");
+    console.log(this);
+  });
   cartElement.appendChild(button);
 
   shoppingCartElement.appendChild(cartElement);
@@ -33,6 +48,7 @@ function addToShoppingList() {
 }
 
 function removeElement() {
+  console.log(this);
   const element = this.parentNode;
 
   const fruitElement = element.querySelector("span");
@@ -47,3 +63,5 @@ function removeElement() {
 function updateAmount() {
   amountElement.innerText = "Items: " + shoppingList.length;
 }
+
+window.addEventListener("load", onLoadHandler);
