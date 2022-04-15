@@ -14,50 +14,44 @@ function onLoadHandler() {
     const fruitElement = document.createElement("div");
     fruitElement.innerText = fruit;
     fruitElement.classList.add("fruit");
-    fruitElement.addEventListener("click", addToShoppingList);
     fruitElement.addEventListener("click", () => {
-      console.log("This is in the arrow function");
-      console.log(this);
+      addFruit(fruit);
     });
     fruitListElement.appendChild(fruitElement);
   }
 }
 
-function addToShoppingList() {
-  console.log(this);
-  shoppingList.push(this.innerText);
-
-  const cartElement = document.createElement("div");
-
-  const spanElement = document.createElement("span");
-  spanElement.innerText = this.innerText;
-  cartElement.appendChild(spanElement);
-
-  const button = document.createElement("button");
-  button.innerText = "Remove";
-  button.addEventListener("click", removeElement);
-  button.addEventListener("click", () => {
-    console.log("This is in the arrow function");
-    console.log(this);
-  });
-  cartElement.appendChild(button);
-
-  shoppingCartElement.appendChild(cartElement);
-
+function addFruit(fruit) {
+  shoppingList.push(fruit);
+  renderShoppingCart();
   updateAmount();
 }
 
-function removeElement() {
-  console.log(this);
-  const element = this.parentNode;
+function renderShoppingCart() {
+  const oldElements = shoppingCartElement.getElementsByTagName("div");
+  for (let i = oldElements.length - 1; i >= 0; i--) {
+    const element = oldElements[i];
+    element.parentNode.removeChild(element);
+  }
 
-  const fruitElement = element.querySelector("span");
-  const emoji = fruitElement.innerText;
-  const emojiIndex = shoppingList.indexOf(emoji);
-  shoppingList.splice(emojiIndex, 1);
+  for (let fruitIndex in shoppingList) {
+    const cartElement = document.createElement("div");
 
-  element.parentNode.removeChild(element);
-  updateAmount();
+    const spanElement = document.createElement("span");
+    spanElement.innerText = shoppingList[fruitIndex];
+    cartElement.appendChild(spanElement);
+
+    const button = document.createElement("button");
+    button.innerText = "Remove";
+    button.addEventListener("click", () => {
+      shoppingList.splice(fruitIndex, 1);
+      renderShoppingCart();
+      updateAmount();
+    });
+    cartElement.appendChild(button);
+
+    shoppingCartElement.appendChild(cartElement);
+  }
 }
 
 function updateAmount() {
