@@ -1,0 +1,73 @@
+{
+  "restaurants": [
+    {
+      "id": 1,
+      "name": "Bastard Burgers",
+      "description": "Med inspiration från New York och rötterna i Norrland levererar Bastard Burgers Sveriges bästa hamburgare. Välkommen!",
+      "image": "https://pixelkind.github.io/ju-iOS-Development-2021/FoodGuide/images/BastardBurgers.jpg",
+      "url": "https://bastardburgers.com/se/restaurants/jonkoping/",
+      "menu": "https://bastardburgers.com/se/meny/",
+      "telefon": "036-501 10",
+      "categories": ["Burgers", "American"],
+      "opening_hours": {
+        "mon": "11:00 - 20:00",
+        "tue": "11:00 - 20:00",
+        "wed": "11:00 - 21:00",
+        "thu": "11:00 - 21:00",
+        "fri": "11:00 - 22:00",
+        "sat": "12:00 - 22:00",
+        "sun": "12:00 - 20:00"
+      },
+      "location": {
+        "latitude": 57.78074563108201,
+        "longitude": 14.171737881473094
+      }
+    },
+    {
+      "id": 2,
+      "name": "Tortellini Pizza & Pasta House",
+      "description": "En restaurang med äkta italiensk pasta och stenugnsbakad pizza samt stans fräschaste salladsbar.\n\nVi gör pastan på italienskt vis alá minute i pannan. Hos oss på Tortellini får du en tunn pizza med färska råvaror och kryddor bakade i stenugn.",
+      "image": "https://pixelkind.github.io/ju-iOS-Development-2021/FoodGuide/images/Tortellini.jpg",
+      "url": "https://tortellini.nu",
+      "menu": "https://tortellini.nu",
+      "telefon": "036-19 00 70",
+      "categories": ["Pizza", "Pasta", "Italian"],
+      "opening_hours": {
+        "mon": "11:00 - 21:00",
+        "tue": "11:00 - 21:00",
+        "wed": "11:00 - 21:00",
+        "thu": "11:00 - 21:00",
+        "fri": "11:00 - 22:00",
+        "sat": "12:00 - 22:00",
+        "sun": "12:00 - 20:00"
+      },
+      "location": {
+        "latitude": 57.77799219725143,
+        "longitude": 14.156057544647735
+      }
+    },
+    {
+      "id": 3,
+      "name": "Icha Mochi",
+      "description": "Icha Mochi är en modern sushirestaurang i centrala Jönköping med utsikt över Munksjön.\n\nRestaurangens kockar bär på många års erfarenhet inom branschen och vet hur riktig japansk sushi ska smaka. Närmare Tokyo och äkta sushi kommer du inte i Jönköping stad.\n\nSupermodern inredning, härlig miljö och oförglömliga drinkar, allt för att få dig som gäst att känna dig väl bemött. På Icha Mochi erbjuds även varma rätter, asiatiska sallader och härliga cocktails.\n\nIcha Mochi har även hemkörning.",
+      "image": "https://pixelkind.github.io/ju-iOS-Development-2021/FoodGuide/images/IchaMochi.jpg",
+      "url": "https://jonkoping.ichamochi.se",
+      "menu": "https://jonkoping.ichamochi.se/meny",
+      "telefon": "036-802 96",
+      "categories": ["Sushi", "Japanese"],
+      "opening_hours": {
+        "mon": "11:00 - 21:00",
+        "tue": "11:00 - 21:00",
+        "wed": "11:00 - 21:00",
+        "thu": "11:00 - 21:00",
+        "fri": "11:00 - sent",
+        "sat": "12:00 - sent",
+        "sun": "12:00 - 21:00"
+      },
+      "location": {
+        "latitude": 57.78078996254804,
+        "longitude": 14.171814994977092
+      }
+    }
+  ]
+}
